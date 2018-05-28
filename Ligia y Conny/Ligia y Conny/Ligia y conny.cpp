@@ -11,7 +11,6 @@ void programa1();
 
 void main() {
 	cout << "\t\tPROYECTO CON GITHUB Y HITKRAKEN DE PROGRAMACION 3\n\n";
-	cout << "hola mundo";
 
 	programa1();
 }
