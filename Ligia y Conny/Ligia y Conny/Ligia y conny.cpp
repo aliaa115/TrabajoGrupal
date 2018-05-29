@@ -16,6 +16,11 @@ void main() {
 }
 
 
+void menu() {
+	system("cls");
+	cout << "MENU";
+}
+
 ///Programa 1
 	//Rombo de *
 void programa1() {
