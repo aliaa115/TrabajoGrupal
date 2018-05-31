@@ -2,6 +2,8 @@
 #include <conio.h>
 
 using namespace std;
+//pilas,colas,listas simple,listas dobles,listas circulares
+//tablas hash con numeros,tablas hash con letras,
 
 ///=======PROTOTIPOS=======
 void programa1();
