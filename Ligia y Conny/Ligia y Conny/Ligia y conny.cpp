@@ -13,46 +13,16 @@ void programa1();
 
 void main() {
 	cout << "\t\tPROYECTO CON GITHUB Y HITKRAKEN DE PROGRAMACION 3\n\n";
-
+	cout << "\tEl siguiente programa contiene los siguientes temas:\n"; 
+	cout << "\t\t 01 - pilas\n";
+	cout << "\t\t 02 - colas\n";
+	cout << "\t\t 03 - listas simples\n";
+	cout << "\t\t 04 - listas dobles\n";
+	cout << "\t\t 05 - listas circulares\n";
+	cout << "\t\t 06 - tablas hash ( numericas )\n";
+	cout << "\t\t 07 - tablas hash ( descriptivas )\n";
+	cout << "\t\t 08 - \n";
+	cout << "\t\t 09 - \n";
+	cout << "\t\t 10 - \n";
 	programa1();
-}
-
-
-void menu() {
-	system("cls");
-	cout << "MENU";
-}
-
-///Programa 1
-	//Rombo de *
-void programa1() {
-	system("cls");
-	
-	int n;
-	cout << "\n\n\t\tROMBO DE ASTERISCOS:\n";
-	cout << "\tINGRESE LA ALTURA DEL ROMBO:  "; cin >> n;
-
-	cout << "\n\n";
-	for (int i = 0; i < n; i++) {
-		cout << "\t";
-		for (int j = 0; j < n - i - 1; j++) {
-			cout << " ";
-		}
-		for (int j = 0; j < 2 * i + 1; j++) {
-			cout << "*";
-		} cout << "\n";
-	}
-	for (int i = n - 2; i >= 0; i--) {
-		cout << "\t";
-		for (int j = 0; j < n - i - 1; j++) {
-			cout << " ";
-		}
-		for (int j = 0; j < 2 * i + 1; j++) {
-			cout << "*";
-		}
-		cout << "\n";
-	}
-	cout << "\n\n";
-	_getch();
-
 }
