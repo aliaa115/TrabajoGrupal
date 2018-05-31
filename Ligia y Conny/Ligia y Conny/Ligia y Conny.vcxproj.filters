@@ -18,5 +18,8 @@
     <ClCompile Include="Ligia y conny.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pilas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
