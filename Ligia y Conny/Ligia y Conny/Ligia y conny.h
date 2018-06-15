@@ -1,5 +1,7 @@
 #include <iostream>
 #include <conio.h>
+#include "Hash_L.h"
+#include "Pilas.h"
 
 using namespace std;
 //pilas,colas,listas simple,listas dobles,listas circulares
