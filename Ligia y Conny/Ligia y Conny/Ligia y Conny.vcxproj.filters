@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ligia y conny.cpp">
+    <ClCompile Include="Pilas.h">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pilas.cpp">
+    <ClCompile Include="Ligia y conny.h">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
