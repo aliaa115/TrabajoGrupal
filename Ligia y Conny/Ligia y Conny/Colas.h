@@ -59,7 +59,7 @@ void insertarC(void) {
 	system("cls");
 	cout << "\t\tASIGNACION DE TURNOS\n\n";
 	cout << "\n\tIngrese el nombre: ";
-	gets_s(a->sC) = NULL;
+	_gets(a->sC) = NULL;
 	a->sC = NULL;
 	if (f == NULL) {
 		f = c = a;
