@@ -1,14 +1,12 @@
 #include <iostream>
 #include <conio.h>
-#include "Colas.h"
-#include "Pilas.h"
+#include "Menu.h"
 
 using namespace std;
 //pilas,colas,listas simple,listas dobles,listas circulares
-//tablas hash con numeros,tablas hash con letras
+//tablas hash con numeros,tablas hash con letras,
 
-///=======PROTOTIPOS=======
-void programa1();
+///---------PROTOTIPOS---------
 
 
 ///=======FUNCION MAIN=======
@@ -26,5 +24,6 @@ void main() {
 	cout << "\t\t 08 - \n";
 	cout << "\t\t 09 - \n";
 	cout << "\t\t 10 - \n";
-	programa1();
+	cout << "\t\t 00 - SALIR\n";
+	cout << "\t\t\tINGRESE EL PROGRAMA A EJECUTAR:  "; menu(_getch());
 }

@@ -1,8 +1,49 @@
 #pragma once
+
 #include "Colas.h"
 #include "Pilas.h"
 
-void menu(int seleccion) {
-	main1();
-	main2();
+
+void insertarP();
+void extraerP();
+void visualizarP();
+void menup();
+
+void insertarC(void);
+void visualizarC(void);
+int atenderC();
+int menuc();
+void menu();
+
+
+void menu(int eleccion) {
+	switch (eleccion)
+	{
+	case 1:
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		break;
+	case 6:
+		break;
+	case 7:
+		break;
+	case 8:
+		break;
+	case 9:
+		break;
+	case 10:
+		break;
+	case 0:
+		break;
+	default:
+		break;
+	}
+
+
 }

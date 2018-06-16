@@ -1,8 +1,10 @@
-#pragma once 
 #define CRT_NO_WARNING_SECURITY
 #include <iostream>
-#include<conio.h>
-
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <Windows.h>
+#include <cstdio>
 
 using namespace std;
 
@@ -11,12 +13,7 @@ struct pila {
 	struct pila *sP;
 }*inicio = NULL, *final = NULL;
 
-int op1 = 0, op1P = 0;
-
-void insertarP();
-void extraerP();
-void visualizarP();
-void menup();
+int op = 0, opP = 0;
 
 void menup() {
 	system("cls");
@@ -26,9 +23,9 @@ void menup() {
 	cout << "	2. Visualizar			\n";
 	cout << "	3. Extraer				\n";
 	cout << "	4. Salir				\n";
-	cout << "	Ingrese una op1cion: ";
-	cin >> op1P;
-	switch (op1P) {
+	cout << "	Ingrese una opcion: ";
+	cin >> opP;
+	switch (opP) {
 	case 1:
 		insertarP();
 		break;
@@ -42,7 +39,7 @@ void menup() {
 		break;
 	default:
 		break;
-	}while (op1P != 4);
+	}while (opP != 4);
 }
 
 void insertarP() {
@@ -93,25 +90,25 @@ void visualizarP() {
 	_getch();
 }
 
-void menu() {
+void menu1() {
 	system("cls");
 	cout << "			MENU 		\n";
 	cout << "	1. Pila				\n";
 	cout << "	2. Salir			\n";
-	cout << "	Ingrese una op1cion: ";
+	cout << "	Ingrese una opcion: ";
 }
 
-void main2() {
+int main2() {
 	system("cls");
 	do {
-		menu();
-		cin >> op1;
-		switch (op1) {
+		menu1();
+		cin >> op;
+		switch (op) {
 		case 1: {
 			system("cls");
 			cout << "\t\tPILA\n\n";
 			menup();
-			cin >> op1P;
+			cin >> opP;
 			_getch();
 		}
 		default:
@@ -119,6 +116,7 @@ void main2() {
 			_getch();
 			break;
 		}
-	} while (op1 != 2);
+	} while (op != 2);
 	_getch();
+	return 0;
 }

@@ -8,7 +8,7 @@ struct cola {
 	struct cola *sC;
 }*c, *a, *f;
 
-int op = 0, opC = 0;
+int op1 = 0, opC = 0;
 
 void insertarC(void);
 void visualizarC(void);
@@ -115,6 +115,6 @@ void main1() {
 			_getch();
 			break;
 		}
-	} while (op != 2);
+	} while (op1 != 2);
 	_getch();
 }
