@@ -15,11 +15,6 @@ struct pila {
 
 int op = 0, opP = 0;
 
-void insertarP();
-void extraerP();
-void visualizarP();
-void menup();
-
 void menup() {
 	system("cls");
 	cout << "			MENU PILA		\n";
@@ -95,7 +90,7 @@ void visualizarP() {
 	_getch();
 }
 
-void menu() {
+void menu1() {
 	system("cls");
 	cout << "			MENU 		\n";
 	cout << "	1. Pila				\n";
@@ -103,10 +98,10 @@ void menu() {
 	cout << "	Ingrese una opcion: ";
 }
 
-int main() {
+int main2() {
 	system("cls");
 	do {
-		menu();
+		menu1();
 		cin >> op;
 		switch (op) {
 		case 1: {
@@ -123,4 +118,5 @@ int main() {
 		}
 	} while (op != 2);
 	_getch();
+	return 0;
 }

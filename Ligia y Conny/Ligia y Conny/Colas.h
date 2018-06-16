@@ -13,7 +13,7 @@ struct cola {
 	struct cola *sC;
 }*c, *a, *f;
 
-int op = 0, opC = 0;
+int op1 = 0, opC = 0;
 
 void insertarC(void);
 void visualizarC(void);
@@ -59,7 +59,7 @@ void insertarC(void) {
 	system("cls");
 	cout << "\t\tASIGNACION DE TURNOS\n\n";
 	cout << "\n\tIngrese el nombre: ";
-	gets_s(a->sC) = NULL;
+	gets_s(a->nombre,20);
 	a->sC = NULL;
 	if (f == NULL) {
 		f = c = a;
@@ -119,6 +119,6 @@ int main() {
 			_getch();
 			break;
 		}
-	} while (op != 2);
+	} while (op1 != 2);
 	_getch();
 }
