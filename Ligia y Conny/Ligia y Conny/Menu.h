@@ -4,10 +4,6 @@
 #include "Pilas.h"
 
 
-void insertarP();
-void extraerP();
-void visualizarP();
-void menup();
 
 void insertarC(void);
 void visualizarC(void);

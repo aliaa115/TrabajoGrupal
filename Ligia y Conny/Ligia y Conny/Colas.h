@@ -15,45 +15,6 @@ struct cola {
 
 int op1 = 0, opC = 0;
 
-void insertarC(void);
-void visualizarC(void);
-int atenderC();
-int menuc();
-void menu();
-
-int menuc() {
-	system("cls");
-	cout << "\t\t	MENU COLA\n";
-	cout << "\t\t PROGRAMA PARA GESTIONAR TURNOS PARA ATENCION\n\n";
-	cout << "\t1. ASIGNAR TURNO\n";
-	cout << "\t2. VISUALIZAR TURNOS EN ESPERA\n";
-	cout << "\t3. ATENDER TURNO\n";
-	cout << "\t4. SALIR";
-	cout << "\tIngrese una opcion: ";
-	opC = _getch();
-	switch (opC) {
-	case '1':
-		insertarC();
-		break;
-	case '2':
-		visualizarC();
-		break;
-	case '3':
-		atenderC();
-		break;
-	case '4':
-		delete a;
-		system("cls");
-		cout << "\t\tHASTA PRONTO...\n";
-		Sleep(2000);
-		exit(1);
-		break;
-	default:
-		break;
-	}while (opC != '4');
-	return 0;
-}
-
 void insertarC(void) {
 	a = new cola;
 	system("cls");
@@ -91,6 +52,7 @@ int atenderC() {
 	system("cls");
 	cout << "\t\t\nSALIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n\n";
 	_getch();
+	return 0;
 }
 
 void menu() {
@@ -101,12 +63,46 @@ void menu() {
 	cout << "	Ingrese una opcion: ";
 }
 
-int main() {
+int menuc() {
+	system("cls");
+	cout << "\t\t	MENU COLA\n";
+	cout << "\t\t PROGRAMA PARA GESTIONAR TURNOS PARA ATENCION\n\n";
+	cout << "\t1. ASIGNAR TURNO\n";
+	cout << "\t2. VISUALIZAR TURNOS EN ESPERA\n";
+	cout << "\t3. ATENDER TURNO\n";
+	cout << "\t4. SALIR";
+	cout << "\tIngrese una opcion: ";
+	opC = _getch();
+	switch (opC) {
+	case '1':
+		insertarC();
+		break;
+	case '2':
+		visualizarC();
+		break;
+	case '3':
+		atenderC();
+		break;
+	case '4':
+		delete a;
+		system("cls");
+		cout << "\t\tHASTA PRONTO...\n";
+		Sleep(2000);
+		exit(1);
+		break;
+	default:
+		break;
+	}while (opC != '4');
+	return 0;
+}
+
+
+int main1() {
 	system("cls");
 	do {
 		menu();
-		cin >> op;
-		switch (op) {
+		cin >> op1;
+		switch (op1) {
 		case 1: {
 			system("cls");
 			cout << "\t\tPILA\n\n";
@@ -121,4 +117,5 @@ int main() {
 		}
 	} while (op1 != 2);
 	_getch();
+	return 0;
 }

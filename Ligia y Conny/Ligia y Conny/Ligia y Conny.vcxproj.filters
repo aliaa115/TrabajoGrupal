@@ -15,19 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Pilas.h">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Ligia y conny.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pilas.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Colas.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.cpp">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Colas.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
