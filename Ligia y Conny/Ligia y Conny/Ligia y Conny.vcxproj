@@ -115,11 +115,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ligia y conny.h" />
+    <ClCompile Include="Ligia y conny.cpp" />
     <ClCompile Include="Pilas.h" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClInclude Include="Hash_L.h" />
+=======
+    <ClInclude Include="Colas.h" />
+    <ClInclude Include="Menu.h" />
+>>>>>>> master
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
