@@ -1,5 +1,10 @@
 #pragma once
 #define CRT_NO_WARNING_SECURITY
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <Windows.h>
 
 using namespace std;
 
@@ -9,45 +14,6 @@ struct cola {
 }*c, *a, *f;
 
 int op1 = 0, opC = 0;
-
-void insertarC(void);
-void visualizarC(void);
-int atenderC();
-int menuc();
-void menuCola();
-
-int menuc() {
-	system("cls");
-	cout << "\t\t	MENU COLA\n";
-	cout << "\t\t PROGRAMA PARA GESTIONAR TURNOS PARA ATENCION\n\n";
-	cout << "\t1. ASIGNAR TURNO\n";
-	cout << "\t2. VISUALIZAR TURNOS EN ESPERA\n";
-	cout << "\t3. ATENDER TURNO\n";
-	cout << "\t4. SALIR";
-	cout << "\tIngrese una opcion: ";
-	opC = _getch();
-	switch (opC) {
-	case '1':
-		insertarC();
-		break;
-	case '2':
-		visualizarC();
-		break;
-	case '3':
-		atenderC();
-		break;
-	case '4':
-		delete a;
-		system("cls");
-		cout << "\t\tHASTA PRONTO...\n";
-		Sleep(2000);
-		exit(1);
-		break;
-	default:
-		break;
-	}while (opC != '4');
-	return 0;
-}
 
 void insertarC(void) {
 	a = new cola;
@@ -89,7 +55,7 @@ int atenderC() {
 	return 0;
 }
 
-void menuCola() {
+void menu() {
 	system("cls");
 	cout << "			MENU 		\n";
 	cout << "	1. Cola 			\n";
@@ -97,12 +63,46 @@ void menuCola() {
 	cout << "	Ingrese una opcion: ";
 }
 
-void main1() {
+int menuc() {
+	system("cls");
+	cout << "\t\t	MENU COLA\n";
+	cout << "\t\t PROGRAMA PARA GESTIONAR TURNOS PARA ATENCION\n\n";
+	cout << "\t1. ASIGNAR TURNO\n";
+	cout << "\t2. VISUALIZAR TURNOS EN ESPERA\n";
+	cout << "\t3. ATENDER TURNO\n";
+	cout << "\t4. SALIR";
+	cout << "\tIngrese una opcion: ";
+	opC = _getch();
+	switch (opC) {
+	case '1':
+		insertarC();
+		break;
+	case '2':
+		visualizarC();
+		break;
+	case '3':
+		atenderC();
+		break;
+	case '4':
+		delete a;
+		system("cls");
+		cout << "\t\tHASTA PRONTO...\n";
+		Sleep(2000);
+		exit(1);
+		break;
+	default:
+		break;
+	}while (opC != '4');
+	return 0;
+}
+
+
+int main1() {
 	system("cls");
 	do {
-		menuCola();
-		cin >> op;
-		switch (op) {
+		menu();
+		cin >> op1;
+		switch (op1) {
 		case 1: {
 			system("cls");
 			cout << "\t\tPILA\n\n";
@@ -117,4 +117,5 @@ void main1() {
 		}
 	} while (op1 != 2);
 	_getch();
+	return 0;
 }
