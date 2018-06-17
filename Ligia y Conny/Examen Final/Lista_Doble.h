@@ -115,7 +115,7 @@ void Vacia(TLE *lista) {
 	cout << endl;
 }
 
-int main() {
+int main4() {
 	system("color f3");
 	TLE *L = crearLista();
 	int N, E, i = 0;

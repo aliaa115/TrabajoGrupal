@@ -24,7 +24,7 @@ void menu(void);
 void guardar(void);
 void cargar(void);
 
-int main() {
+int main3() {
 	menu();
 }
 
@@ -110,8 +110,8 @@ int buscar(int d) {
 }
 
 void insertar(int dat) {
+		i = new dato;
 	if (!i) {
-		i = new(dato);
 		i->s = NULL;
 		i->i = dat;
 		return;
@@ -121,7 +121,7 @@ void insertar(int dat) {
 		_getch();
 		return;
 	}
-	e = new(dato);
+	e = new dato;
 	e->i = dat;
 	if (p == i && p->s) {
 		e->s = p;

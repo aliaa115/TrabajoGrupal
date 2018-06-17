@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include "Hash_N.h"
+#include "Lista_Doble.h"
+#include "Lista_Simple.h"
 
 void menu(std::string opcion) {
 	int st = atoi(opcion.c_str());
@@ -12,8 +14,10 @@ void menu(std::string opcion) {
 	case 2:
 		break;
 	case 3:
+		main3();
 		break;
 	case 4:
+		main4();
 		break;
 	case 5:
 		break;
