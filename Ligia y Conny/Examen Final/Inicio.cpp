@@ -1,9 +1,10 @@
 #include <iostream>
 #include <conio.h>
 #include "Menu.h"
+#include "Lista_Simple.h"
 #include <string>
 
-void main() {
+int main() {
 	std::string eleccionmenu;
 	printf("\n\t\tPROYECTO CON GITHUB Y HITKRAKEN PARA EXAMEN FINAL DE PROGRAMACION 3:\n\tElija uno de los temas a continuacion para ejecutar el programa:\n"
 		"%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n\tEleccion:  ", 
