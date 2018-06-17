@@ -26,8 +26,5 @@
     <ClInclude Include="Lista_Simple.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Lista_Doble.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

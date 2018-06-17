@@ -118,7 +118,6 @@
     <ClCompile Include="Inicio.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Lista_Doble.h" />
     <ClInclude Include="Lista_Simple.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
