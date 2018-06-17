@@ -118,6 +118,7 @@
     <ClCompile Include="Inicio.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Hash_N.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
