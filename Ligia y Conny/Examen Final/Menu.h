@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <string>
-#include "Hash_N.h"
 
 void menu(std::string opcion) {
 	int st = atoi(opcion.c_str());
@@ -20,7 +19,6 @@ void menu(std::string opcion) {
 	case 6:
 		break;
 	case 7:
-		main7();
 		break;
 	case 8:
 		break;
