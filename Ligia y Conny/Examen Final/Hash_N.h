@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <conio.h>
 #include <stdlib.h>
@@ -7,99 +6,256 @@
 using namespace std;
 
 ///variables glovales
-int Dato_HashN, SDato_HashN, Max_HashN = 5;
+int dato;
+string sdato;
+int MAX = 5;
 
-///estructuras
-struct llave_HashN {
-	struct llave_HashN *s_HashN;
-	struct llave_HashN *a_HashN;
-	int lla_HashN;
-}*inicioL_HashN, *finL_HashN, *recorrerL_HashN, *nuevoL_HashN;
+///prototipos
+struct llave;
+struct clave;
+clave *nuevaC(); llave *nuevaL();
+llave *recoL(); clave *recoC(clave *);
+int funcHash(); void inicL();
+void iniciarLlave(); llave *buscarLlave(int);
+void insertarClave(llave*); void irEnLlave();
+void pedirDato(); void imprimir(); void elim(); void buscar();
 
-struct clave_HashN {
-	struct clave_HashN *a_HashN;
-	struct clave_HashN *s_HashN;
-	int cla_HashN;
-	struct llave_HashN *llave_HashN;
-}*inicioC_HashN, *finC_HashN, *recorrerC_HashN, *nuevoC_HashN;
+///funciones
 
-///prototipos:
-clave_HashN *nuevaC_HashN();
-llave_HashN *nuevaL_HashN();
-llave_HashN *recoL_HashN(clave_HashN*);
-clave_HashN *recoC_HashN();
-int funHash_HashN();
-void inicC_HashN();
-void iniciarClave_HashN();
-llave_HashN *buscarLlave_HashN(int);
-void insertarLlave_HashN(clave_HashN*);
-void irEnLlave_HashN();
-void pedirDato_HashN();
-void imprimir_HashN();
-void elim_HashN();
-void buscar_HashN();
+struct llave {
+	struct llave *s;
+	struct llave *a;
+	int illa;
+	string lla;
+	struct clave *clave;
+}*inicioL, *finL, *recorrerL, *nuevoL;
 
+struct clave {
+	struct clave *a;
+	struct clave *s;
+	int icla;
+	string cla;
+}*inicioC, *finC, *recorrerC, *nuevoC;
 
-clave_HashN *nuevaC_HashN() {
-	nuevoC_HashN = new clave_HashN;
-	if (nuevoC_HashN) {
-		nuevoC_HashN->s_HashN = NULL;
-		nuevoC_HashN->cla_HashN = 0;
-		nuevoC_HashN->a_HashN = NULL;
-		nuevoC_HashN->llave_HashN = NULL;
+clave *nuevaC() {
+	nuevoC = new clave;
+	if (nuevoC) {
+		nuevoC->s = NULL;
+		nuevoC->icla = dato;
+		nuevoC->cla = sdato;
+		nuevoC->a = NULL;
 	}
-	return nuevoC_HashN;
+	return nuevoC;
 }
 
-llave_HashN *nuevaL_HashN() {
-	nuevoL_HashN = new llave_HashN;
-	if (nuevoL_HashN) {
-		nuevoL_HashN->s_HashN = NULL;
-		nuevoL_HashN->a_HashN = NULL;
-		nuevoL_HashN->lla_HashN = NULL;
+llave *nuevaL() {
+	nuevoL = new llave;
+	if (nuevoL) {
+		nuevoL->a = NULL;
+		nuevoL->s = NULL;
+		nuevoL->illa = 0;
+		nuevoL->clave = NULL;
 	}
-	return nuevoL_HashN;
+	return nuevoL;
 }
 
-int funHash_HashN() {
-	return (Dato_HashN % Max_HashN);
+int funcHash() {
+	return (dato % MAX);
 }
 
-
-void inicC_HashN() {
-	inicioC_HashN = nuevaC_HashN();
-	inicioC_HashN->cla_HashN = 0;
-	cout << "\n\tINGRESE LA LLAVE LA POSICION 0: ";
-	cin  >> inicioC_HashN->cla_HashN;
+void inicL() {
+	inicioL = nuevaL();
+	inicioL->illa = 0;
+	cout << "\n\tINGRESE LA LLAVE PARA LA POSICION 0: ";
+	cin >> inicioL->lla;
 }
 
-clave_HashN *recoC_HashN() {
-	recorrerC_HashN = inicioC_HashN;
-	while (recorrerC_HashN->s_HashN) {
-		recorrerC_HashN = recorrerC_HashN->s_HashN;
+llave *recoL() {
+	recorrerL = inicioL;
+	while (recorrerL->s) {
+		recorrerL = recorrerL->s;
 	}
-	return recorrerC_HashN;
+	return recorrerL;
 }
 
-llave_HashN *recoL_HashN(llave_HashN *i_HashN) {
-	recorrerL_HashN = i_HashN;
-	while (recorrerL_HashN->s_HashN) {
-		recorrerL_HashN = recorrerL_HashN->s_HashN;
+clave *recoC(clave *i) {
+	recorrerC = i;
+	while (recorrerC->s) {
+		recorrerC = recorrerC->s;
 	}
-	return recorrerL_HashN;
+	return recorrerC;
 }
 
-void iniciarClave_HashN() {
-	clave_HashN *n, *aux;
-	for (int i = 0; i < Max_HashN; i++) {
-		if (!inicioC_HashN)inicC_HashN();
+void iniciarLlave() {
+	llave *n, *aux;
+	for (int i = 0; i < MAX; i++) {
+		if (!inicioL) inicL();
 		else {
-			n = nuevaC_HashN();
-			aux = recoC_HashN();
-			n->cla_HashN = i;
-			cout << "\n\tCLAVE " << i << " INGRESADA. ";
-			aux->s_HashN = n;
-			n->a_HashN = aux;
+			n = nuevaL();
+			aux = recoL();
+			n->illa = i;
+			cout << "\n\tINGRESE LA LLAVE PARA LA POSICION " << i << ": ";
+			cin >> n->lla;
+			aux->s = n;
+			n->a = aux;
 		}
 	}
+}
+
+llave *buscarLlave(int fH) {
+	recorrerL = inicioL;
+	while (recorrerL->s) {
+		if (recorrerL->illa == fH)
+			return recorrerL;
+		recorrerL = recorrerL->s;
+	}
+	return recorrerL;
+}
+
+void insertarClave(llave *a) {
+	clave *n, *i;
+	if (!a->clave) { a->clave = nuevaC(); }
+	else {
+		i = recoC(a->clave);
+		n = nuevaC();
+		i->s = n;
+	}
+}
+
+void irEnLlave() {
+	llave *insertarL;
+	insertarL = buscarLlave(funcHash());
+	insertarClave(insertarL);
+}
+
+void pedirDato() {
+	char a[100];
+	cout << "\n\n\n\n\t\t|INGRESO DE DATO|";
+	cout << "\n\n\tingrese el dato para la tabla de hash:  ";
+	cin >> sdato;
+	dato = sdato[0];
+	cout << "\t                                   residuo: " << dato % MAX;
+	irEnLlave();
+}
+
+void imprimir() {
+	recorrerL = inicioL;
+
+	cout << "\n\n\n\n";
+	for (int i = 0; i < 100; i++)
+		cout << "-";
+	for (int i = 0; i < MAX; i++) {
+		cout << "\n\t" << recorrerL->illa << " " << recorrerL->lla << "\t|";
+		if (recorrerL->clave) {
+			recorrerC = recorrerL->clave;
+			while (recorrerC) {
+				cout << "\t( " << recorrerC->icla << " ) " << recorrerC->cla << " |";
+				recorrerC = recorrerC->s;
+			}
+		}
+		cout << "\n";
+		for (int i = 0; i < 100; i++)
+			cout << "-";
+		recorrerL = recorrerL->s;
+	}
+}
+
+void buscar() {
+	cout << "\n\n\t\t|BUSCAR|\n";
+	cout << "\n\tingrese el valor a buscar: ";
+	cin >> sdato;
+	dato = sdato[0];
+	recorrerL = inicioL;
+	while (recorrerL) {
+		if (recorrerL->illa == (dato%MAX))break;
+		recorrerL = recorrerL->s;
+	}
+	if (!recorrerL->clave)cout << "\n\tEL DATO NO ESTA EN LA LISTA...";
+	else {
+		recorrerC = recorrerL->clave;
+		while (recorrerC) {
+			if (recorrerC->cla == sdato) { cout << "\n\tEL DATO SI ESTA EN LA LISTA..."; break; break; }
+			recorrerC = recorrerC->s;
+		}
+	}
+}
+
+void elim() {
+	clave *aux;
+	cout << "\n\n\t\t|ELIMINAR|\n";
+	cout << "\n\tingrese el valor a eliminar: ";
+	cin >> sdato;
+	dato = sdato[0];
+	recorrerL = inicioL;
+	while (recorrerL) {
+		if (recorrerL->illa == (dato%MAX))break;
+		recorrerL = recorrerL->s;
+	}
+	if (!recorrerL->clave)cout << "\n\tEL DATO NO ESTA EN LA LISTA...";
+	else {
+		recorrerC = recorrerL->clave;
+		aux = recorrerC;
+		while (recorrerC) {
+			if (recorrerC->cla == sdato) {
+				if (recorrerC == recorrerL->clave) recorrerL->clave = recorrerC->s;
+				else { aux->s = recorrerC->s; }
+				free(recorrerC);
+				cout << "\n\tEL DATO BORRADO DE LA LISTA...";
+				break; break;
+			}
+			aux = recorrerC;
+			recorrerC = recorrerC->s;
+		}
+		cout << "\n\tEL DATO NO ESTA EN LA LISTA...";
+	}
+}
+
+void menuHashL() {
+	int op = 1;
+	while (op != 0) {
+		system("cls");
+		cout << "\n\n\t\t\tMENU:";
+		cout << "\n\t\t1| INSERTAR";
+		cout << "\n\t\t2| IMPRIMIR";
+		cout << "\n\t\t3| BUSCAR";
+		cout << "\n\t\t4| ELIMINAR";
+		cout << "\n\t\t0| SALIR";
+		cout << "\n\t\t--------------> ";
+		cin >> op;
+		switch (op) {
+		case 1:
+			pedirDato();
+			break;
+		case 2:
+			imprimir();
+			_getch();
+			break;
+		case 3:
+			buscar();
+			_getch();
+			break;
+		case 4:
+			elim();
+			_getch();
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+int main7() {
+
+	system("cls");
+
+	cout << "\n\n\t\tincio del programa::";
+	cout << "\n\tingrese el tamaño del vector: ";
+	cin >> MAX;
+	if (2 % MAX == 0)MAX = MAX + 1;
+
+	iniciarLlave();
+	system("cls");
+	menuHashL();
+	_getch();
+	return 0;
 }
