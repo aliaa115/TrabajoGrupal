@@ -1,10 +1,5 @@
 #pragma once
 #define CRT_NO_WARNING_SECURITY
-#include <iostream>
-#include <stdlib.h>
-#include <stdio.h>
-#include <conio.h>
-#include <Windows.h>
 
 using namespace std;
 
@@ -19,7 +14,7 @@ void insertarC(void);
 void visualizarC(void);
 int atenderC();
 int menuc();
-void menu();
+void menuCola();
 
 int menuc() {
 	system("cls");
@@ -59,7 +54,7 @@ void insertarC(void) {
 	system("cls");
 	cout << "\t\tASIGNACION DE TURNOS\n\n";
 	cout << "\n\tIngrese el nombre: ";
-	_gets(a->sC) = NULL;
+	gets_s(a->nombre,20);
 	a->sC = NULL;
 	if (f == NULL) {
 		f = c = a;
@@ -91,9 +86,10 @@ int atenderC() {
 	system("cls");
 	cout << "\t\t\nSALIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n\n";
 	_getch();
+	return 0;
 }
 
-void menu() {
+void menuCola() {
 	system("cls");
 	cout << "			MENU 		\n";
 	cout << "	1. Cola 			\n";
@@ -101,10 +97,10 @@ void menu() {
 	cout << "	Ingrese una opcion: ";
 }
 
-int main() {
+void main1() {
 	system("cls");
 	do {
-		menu();
+		menuCola();
 		cin >> op;
 		switch (op) {
 		case 1: {
