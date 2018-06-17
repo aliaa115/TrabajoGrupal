@@ -29,5 +29,4 @@ void menu(std::string opcion) {
 	default:
 		break;
 	}
-
 }
