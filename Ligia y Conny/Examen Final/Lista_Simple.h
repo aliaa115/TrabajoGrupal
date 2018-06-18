@@ -1,104 +1,217 @@
-/*
 #pragma once
 ///Listas Simplemente Enlazadas
 #define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <conio.h>
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <iostream>
 
 using namespace std;
 
-typedef struct nodos {
-	int valor;
-	struct nodos *siguiente;
-}tipoNodo;
+struct dato {
+	int i;
+	dato *s;
+}*a, *i, *p, *e;
 
-typedef tipoNodo *pNodo;
-typedef tipoNodo *Lista;
+int da;
 
-void Insertar(Lista *l, int v);
-void Borrar(Lista *l, int v);
-int ListaVacia(Lista l);
-void BorrarLista(Lista *);
-void MostrarLista(Lista l);
+int buscar(int d);
+void insertar(int dat);
+void mostrar(void);
+void borrar(void);
+void menu(void);
+void guardar(void);
+void cargar(void);
 
-int main() {
-	Lista lista = NULL;
-	pNodo p;
-	Insertar(&lista, 20);
-	Insertar(&lista, 10);
-	Insertar(&lista, 40);
-	Insertar(&lista, 30);
-
-	MostrarLista(lista);
-
-	BorrarLista(&lista);
-
-	system("pause>NULL");
-	return 0;
+int main3() {
+	menuls();
 }
 
-void Insertar(Lista *lista, int v) {
-	pNodo nuevo, anterior;
+void menuls(void) {
+	int opc, da;
+	do {
+		cout << "\n\n\t\t           MENU\n";
+		cout << "\t\t1 - Buscar Datos\n";
+		cout << "\t\t2 - Insertar Datos\n";
+		cout << "\t\t3 - Mostrar Todos Los Datos\n";
+		cout << "\t\t4 - Borrar Un Dato\n";
+		cout << "\t\t5 - Guardar Datos A Archivo\n";
+		cout << "\t\t6 - Cargar Datos De Archivo\n";
+		cout << "\t\t0 - Salida\n";
+		cout << "\t\tSeleccione Opcion: ";
+		cin >> opc;
+		switch (opc) {
+		case 0: cout << "\n\nSaliendo del programa...";
+			_getch();
+			//no hay que olvidarse que antes de
+			//abandonar el barco ...
+			//hay que hundir todos los botes
+			// o sea usar delete para eliminar
+			//toda la lista
+			p = i;
+			while (p) {
+				a = p;
+				p = p->s;
+				delete(a);
+			}
+			exit(0);
+		case 1: cout << "\n\nIngrese dato a buscar: ";
+			cin >> da;
+			if (buscar(da))
+				cout << "\n\nDato existe...";
+			else
+				cout << "\n\nDato NO EXISTE...";
+			_getch();
+			break;
+		case 2: cout << "Ingrese dato: ";
+			cin >> da;
+			insertar(da);
+			break;
+		case 3: mostrar();
+			break;
+		case 4: borrar();
+			break;
+		case 5: guardar();
+			break;
+		case 6: cargar();
+			break;
+			//por las dudas que el operador ingrese
+			//cualquier verdura, fruta u otro tipo de hierba
+		default: cout << "\n\nOPCION NO VALIDA!!!";
+			_getch();
+		}
+	} while (opc);
+}
 
-	nuevo = (pNodo)malloc(sizeof(tipoNodo));
-	nuevo->valor = v;
+void mostrar(void) {
+	int cont = 1;
+	if (!i) {
+		cout << "\n\nNO HAY LISTA PARA MOSTRAR!!!";
+		_getch();
+		return;
+	}
+	p = i;
+	cout << endl << endl;
+	while (p) {
+		cout << cont++ << " - Valor = " << p->i << endl;
+		p = p->s;
+	}
+	cout << "\n\nEso es todo";
+	_getch();
+}
 
-	if (ListaVacia(*lista) || (*lista)->valor > v) {
-		nuevo->siguiente = *lista;
-		*lista = nuevo;
+int buscar(int d) {
+	if (!i) {
+		cout << "No hay datos en la lista!!!";
+		_getch();
+		return(0);
+	}
+	p = i;
+	a = NULL;
+	while (p->s && p->i<d) {
+		a = p;
+		p = p->s;
+	}
+	return(p->i == d ? 1 : 0);
+}
+
+void insertar(int dat) {
+	if (!i) {
+		i = new(dato);
+		i->s = NULL;
+		i->i = dat;
+		return;
+	}
+	if (buscar(dat)) {
+		cout << "\n\nDato existente...";
+		_getch();
+		return;
+	}
+	e = new(dato);
+	e->i = dat;
+	if (p == i && p->s) {
+		e->s = p;
+		i = e;
+		return;
+	}
+	if (p == i && !p->s) {
+		if (p->i < e->i) {
+			p->s = e;
+			e->s = NULL;
+		}
+		else {
+			e->s = p;
+			i = e;
+		}
+		return;
+	}
+	if (p->s) {
+		a->s = e;
+		e->s = p;
+		return;
+	}
+	if (e->i > p->i) {
+		e->s = NULL;
+		p->s = e;
 	}
 	else {
-		anterior = *lista;
-		while (anterior->siguiente && anterior->siguiente->valor <= v)
-			anterior = anterior->siguiente;
-			nuevo->siguiente = anterior->siguiente;
-			anterior->siguiente = nuevo;
+		a->s = e;
+		e->s = p;
 	}
 }
 
-void Borrar(Lista *lista, int v) {
-	pNodo anterior, nodo;
-
-	nodo = *lista;
-	anterior = NULL;
-	while (nodo&&nodo->valor < v) {
-		anterior = nodo;
-		nodo = nodo->siguiente;
-	}
-	if (!nodo || nodo->valor != v) return;
-	else {
-		if (!anterior)
-			*lista = nodo->siguiente;
+void borrar(void) {
+	cout << "\n\nIngrese dato a eliminar: ";
+	cin >> da;
+	if (buscar(da)) {
+		if (a)
+			a->s = p->s;
 		else
-			anterior->siguiente = nodo->siguiente;
-			free(nodo);
+			i = p->s;
+		delete(p);
+		cout << "\n\nDato eliminado...";
 	}
+	else
+		cout << "\n\nDato no se encuentra!!!";
+	_getch();
 }
 
-int ListaVacia(Lista lista) {
-	return (lista == NULL);
-}
-
-void BorrarLista(Lista *lista) {
-	pNodo nodo;
-
-	while (*lista) {
-		nodo = *lista;
-		*lista = nodo->siguiente;
-		free(nodo);
+void guardar(void) {
+	FILE *arch;
+	arch = fopen("DATOS-A.TXT", "w");
+	if (!i) {
+		cout << "\n\nNO HAY LISTA PARA GUARDAR!!!";
+		_getch();
+		return;
 	}
-}
-
-void MostrarLista(Lista lista) {
-	pNodo nodo = lista;
-
-	if (ListaVacia(lista)) printf("\nLista Vacia\n");
-	else {
-	while (nodo) {
-		printf("%p -> %d | ", nodo, nodo->valor);
-		nodo = nodo->siguiente;
-		}printf("\n");
+	p = i;
+	while (p) {
+		fprintf(arch, "%i\n", p->i);
+		p = p->s;
 	}
+	cout << "\n\nArchivo Guardado...";
+	fclose(arch);
+	_getch();
 }
-*/
+
+void cargar(void) {
+	int c, x;
+	FILE *arch;
+	arch = fopen("DATOS-A.TXT", "r");
+	if (!arch) {
+		cout << "\n\nNO EXISTE EL ARCHIVO!!!";
+		_getch();
+		return;
+	}
+	do {
+		c = fscanf(arch, "%i\n", &x);
+		if (c != EOF) {
+			insertar(x);
+		}
+	} while (c != EOF);
+	cout << "\n\nArchivo Cargado...";
+	fclose(arch);
+	_getch();
+}

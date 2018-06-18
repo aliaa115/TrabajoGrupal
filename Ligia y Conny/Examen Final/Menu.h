@@ -20,9 +20,10 @@ void menu(std::string opcion) {
 		main1();
 		break;
 	case 2:
+		main2();
 		break;
 	case 3:
-
+		main3();
 		break;
 	case 4:
 		main4();

@@ -1,7 +1,7 @@
 #pragma once
 ///Lista Doblemente enlazada
 #define _CRT_SECURE_NO_WARNINGS
-#include<iostream>
+#include <iostream>
 #define Ascendente 1
 #define Descendente 0
 
