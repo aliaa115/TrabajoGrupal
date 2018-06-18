@@ -126,6 +126,7 @@
     <ClInclude Include="Lista_Doble.h" />
     <ClInclude Include="Lista_Simple.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Pila.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

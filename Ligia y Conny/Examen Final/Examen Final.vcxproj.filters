@@ -44,5 +44,8 @@
     <ClInclude Include="floyd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Pila.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

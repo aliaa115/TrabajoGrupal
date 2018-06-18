@@ -4,7 +4,9 @@
 #include <string>
 #include "Hash_N.h"
 #include "Hash_L.h"
+#include "Pila.h"
 #include "Lista_Doble.h"
+#include "Lista_Simple.h"
 #include "floyd.h"
 #include "ArbolesAVL.h"
 #include "ArbolesBinariosDeBusqueda.h"
@@ -13,10 +15,12 @@ void menu(std::string opcion) {
 	int st = atoi(opcion.c_str());
 	switch (st){
 	case 1:
+		main1();
 		break;
 	case 2:
 		break;
 	case 3:
+
 		break;
 	case 4:
 		main4();
