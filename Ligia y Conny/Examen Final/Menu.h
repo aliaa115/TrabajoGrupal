@@ -6,6 +6,7 @@
 #include "Hash_L.h"
 #include "Cola.h"
 #include "Pila.h"
+#include "Lista_Circular.h"
 #include "Lista_Doble.h"
 #include "Lista_Simple.h"
 #include "floyd.h"
@@ -27,6 +28,7 @@ void menu(std::string opcion) {
 		main4();
 		break;
 	case 5:
+		main5();
 		break;
 	case 6:
 		main6();

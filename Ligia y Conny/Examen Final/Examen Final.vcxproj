@@ -124,6 +124,7 @@
     <ClInclude Include="floyd.h" />
     <ClInclude Include="Hash_L.h" />
     <ClInclude Include="Hash_N.h" />
+    <ClInclude Include="Lista_Circular.h" />
     <ClInclude Include="Lista_Doble.h" />
     <ClInclude Include="Lista_Simple.h" />
     <ClInclude Include="Menu.h" />

@@ -50,5 +50,8 @@
     <ClInclude Include="Cola.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Lista_Circular.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

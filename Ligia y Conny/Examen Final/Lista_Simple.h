@@ -4,14 +4,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <conio.h>
-#include <stdlib.h>
 #include <stdio.h>
 
 using namespace std;
 
-typedef struct _nodo {
+typedef struct nodos {
 	int valor;
-	struct _nodo *siguiente;
+	struct nodos *siguiente;
 }tipoNodo;
 
 typedef tipoNodo *pNodo;
@@ -19,13 +18,11 @@ typedef tipoNodo *Lista;
 
 void Insertar(Lista *l, int v);
 void Borrar(Lista *l, int v);
-
 int ListaVacia(Lista l);
-
 void BorrarLista(Lista *);
 void MostrarLista(Lista l);
 
-int main3() {
+int main() {
 	Lista lista = NULL;
 	pNodo p;
 	Insertar(&lista, 20);
@@ -55,8 +52,8 @@ void Insertar(Lista *lista, int v) {
 		anterior = *lista;
 		while (anterior->siguiente && anterior->siguiente->valor <= v)
 			anterior = anterior->siguiente;
-		nuevo->siguiente = anterior->siguiente;
-		anterior->siguiente = nuevo;
+			nuevo->siguiente = anterior->siguiente;
+			anterior->siguiente = nuevo;
 	}
 }
 
@@ -75,7 +72,7 @@ void Borrar(Lista *lista, int v) {
 			*lista = nodo->siguiente;
 		else
 			anterior->siguiente = nodo->siguiente;
-		free(nodo);
+			free(nodo);
 	}
 }
 
@@ -98,9 +95,9 @@ void MostrarLista(Lista lista) {
 
 	if (ListaVacia(lista)) printf("\nLista Vacia\n");
 	else {
-		while (nodo) {
-			printf("%p -> %d | ", nodo, nodo->valor);
-			nodo = nodo->siguiente;
+	while (nodo) {
+		printf("%p -> %d | ", nodo, nodo->valor);
+		nodo = nodo->siguiente;
 		}printf("\n");
 	}
 }
