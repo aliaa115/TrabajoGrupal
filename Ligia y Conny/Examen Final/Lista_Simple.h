@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 ///Listas Simplemente Enlazadas
 ///#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
@@ -209,3 +209,4 @@ void cargar(void) {
 	fclose(arch);
 	_getch();
 }
+*/
