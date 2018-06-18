@@ -116,14 +116,13 @@ void Vacia(TLE *lista) {
 }
 
 int main4() {
-	system("cls");
+	system("color f3");
 	TLE *L = crearLista();
 	int N, E, i = 0;
 	int opcion;
 	cout << "          MENU LISTAS DOBLES" << endl;
 	cout << "          ------------------ ";
 	while (1) {
-		system("cls");
 		cout << endl << endl;
 		cout << "   -------------------------------- " << endl;
 		cout << "   | 1.  Insertar                  |" << endl;
