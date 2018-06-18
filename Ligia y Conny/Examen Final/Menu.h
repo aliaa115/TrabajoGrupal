@@ -5,6 +5,7 @@
 #include "Hash_N.h"
 #include "Hash_L.h"
 #include "Lista_Doble.h"
+#include "floyd.h"
 //#include "Lista_Simple.h"
 
 void menu(std::string opcion) {
@@ -29,6 +30,8 @@ void menu(std::string opcion) {
 		main7();
 		break;
 	case 8:
+		main8();
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 		break;
 	case 9:
 		break;
