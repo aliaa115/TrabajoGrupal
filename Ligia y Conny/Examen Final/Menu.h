@@ -27,7 +27,6 @@ void menu(std::string opcion) {
 		main6();
 		break;
 	case 7:
-		main7();
 		break;
 	case 8:
 		main8();
