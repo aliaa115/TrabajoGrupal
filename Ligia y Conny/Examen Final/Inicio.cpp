@@ -17,8 +17,8 @@ int main() {
 		"\t\t 06 - tablas hash ( numericas )", 
 		"\t\t 07 - tablas hash ( descriptivas )", 
 		"\t\t 08 - floyd", 
-		"\t\t 09 - ABB", 
-		"\t\t 10 - AVL", 
+		"\t\t 09 - ", 
+		"\t\t 10 - ", 
 		"\t\t 00 - SALIR");
 	std::cin >> eleccionmenu;
 	menu(eleccionmenu);
@@ -35,8 +35,8 @@ int main() {
 			"\t\t 06 - tablas hash ( numericas )",
 			"\t\t 07 - tablas hash ( descriptivas )",
 			"\t\t 08 - floyd",
-			"\t\t 09 - ABB",
-			"\t\t 10 - AVL",
+			"\t\t 09 - ",
+			"\t\t 10 - ",
 			"\t\t 00 - SALIR"); 
 		std::cin >> eleccionmenu;
 		menu(eleccionmenu);

@@ -6,8 +6,7 @@
 #include "Hash_L.h"
 #include "Lista_Doble.h"
 #include "floyd.h"
-#include "ArbolesAVL.h"
-#include "ArbolesBinariosDeBusqueda.h"
+//#include "Lista_Simple.h"
 
 void menu(std::string opcion) {
 	int st = atoi(opcion.c_str());
@@ -17,6 +16,7 @@ void menu(std::string opcion) {
 	case 2:
 		break;
 	case 3:
+		//main3();
 		break;
 	case 4:
 		main4();
@@ -34,10 +34,8 @@ void menu(std::string opcion) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 		break;
 	case 9:
-		main9();
 		break;
 	case 10:
-		main10();
 		break;
 	default:
 		break;
