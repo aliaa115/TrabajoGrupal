@@ -118,6 +118,10 @@
     <ClCompile Include="Inicio.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArbolesAVL.h" />
+    <ClInclude Include="ArbolesBinariosDeBusqueda.h" />
+    <ClInclude Include="floyd.h" />
+    <ClInclude Include="Hash_L.h" />
     <ClInclude Include="Hash_N.h" />
     <ClInclude Include="Lista_Doble.h" />
     <ClInclude Include="Lista_Simple.h" />

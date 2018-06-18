@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "Hash_N.h"
+#include "Hash_L.h"
 #include "Lista_Doble.h"
 //#include "Lista_Simple.h"
 
@@ -22,6 +23,7 @@ void menu(std::string opcion) {
 	case 5:
 		break;
 	case 6:
+		main6();
 		break;
 	case 7:
 		main7();
