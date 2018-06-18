@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClInclude Include="ArbolesAVL.h" />
     <ClInclude Include="ArbolesBinariosDeBusqueda.h" />
+    <ClInclude Include="Cola.h" />
     <ClInclude Include="floyd.h" />
     <ClInclude Include="Hash_L.h" />
     <ClInclude Include="Hash_N.h" />

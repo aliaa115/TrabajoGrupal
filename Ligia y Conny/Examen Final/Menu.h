@@ -4,6 +4,7 @@
 #include <string>
 #include "Hash_N.h"
 #include "Hash_L.h"
+#include "Cola.h"
 #include "Pila.h"
 #include "Lista_Doble.h"
 #include "Lista_Simple.h"
